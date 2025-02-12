@@ -7,11 +7,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-
-export class HelloWorldComponent {
-  name = 'World';
-}
-
 export class AppComponent {
-  title = 'hello world';
+  title = 'hello-world';
 }
