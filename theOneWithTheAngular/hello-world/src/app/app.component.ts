@@ -10,7 +10,6 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'hello-world';
 }
-
 @Component({
   selector: 'app-root-two',
   imports: [RouterOutlet],
