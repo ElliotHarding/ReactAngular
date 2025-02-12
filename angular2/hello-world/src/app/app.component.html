@@ -7,6 +7,15 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<main class="main">
+	<div>
+		<h1>text</h1>
+		<h1>Hello, {{ name }}</h1>
+	</div>
+</main>
+
+
+<!--
 <style>
   :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
@@ -225,15 +234,19 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
+      
+      
+      
+      <!--<h1>Hello, {{ title }}</h1>
       
       <app-hello-world></app-hello-world>
       
       <p>Congratulations! Your app is running. 🎉</p>
       <p appHighlight>This text will be highlighted.</p>
-      <p [ngClass]="{'highlight': showGreeting, 'normal': !showGreeting}">Hello, {{ name }}!</p>
+      <p [ngClass]="{'highlight': showGreeting, 'normal': !showGreeting}">Hello, {{ name }}!</p>- ->
     </div>
     
+    <!--
     <app-hello-world></app-hello-world>
     
     <ul>
@@ -243,6 +256,8 @@
 	</ul>
     <p *ngIf="showGreeting">Hello, {{ name }}!</p>  <p *ngIf="!showGreeting">Greeting is hidden.</p>
 	<button (click)="showGreeting = !showGreeting">Toggle Greeting</button>
+	
+	- - >
     
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -338,6 +353,7 @@
       </div>
     </div>
   </div>
+- ->
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -348,5 +364,5 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
 <router-outlet />
+
