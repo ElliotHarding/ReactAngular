@@ -10,11 +10,11 @@ function ProductList() {
   }, []);
 
   return (
-  
-  	<p>
+  	<div className="ProductList">
+  	<h1>
   		hello world
-  	</p>
-  
+  	</h1>
+  	</div>
 //    <ul>
 //      {products.map(product => (
 //        <li key={product}>{product}</li>
