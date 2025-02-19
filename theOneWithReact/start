@@ -37,6 +37,9 @@ export default App;
 
 # 5. npm start
 
+--
+     cd react-hello-world
+
 # 6. npm run build
      
 # 7. npm start
