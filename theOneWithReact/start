@@ -2,3 +2,42 @@ sudo pacman -S nodejs npm
 sudo npm install -g expo-cli
 sudo npm install expo
 sudo npx expo start
+
+
+
+
+# 1. Create a new React project using Create React App:
+npx create-react-app hello-world
+
+# 2. Navigate into the newly created directory:
+cd hello-world
+
+# 3. Open the `src/App.js` file in your text editor.  You can do this from the command line on some systems:
+code src/App.js  # If you have VS Code
+nano src/App.js # If you prefer nano
+vi src/App.js  # If you prefer vi
+# Or open it manually with your preferred editor.
+
+# 4. Replace the contents of `src/App.js` with the following code:
+
+# Inside App.js:
+```javascript
+import React from 'react';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello, World!</h1>
+    </div>
+  );
+}
+
+export default App;
+
+
+# 5. npm start
+
+# 6. 
+     npm run build
+     
+# 7. npm start
