@@ -2,3 +2,8 @@ sudo pacman -S nodejs npm
 sudo npm install -g expo-cli
 sudo npm install expo
 sudo npx expo start
+http://localhost:8081/
+
+
+sudo npm run build
+sudo npx expo start
