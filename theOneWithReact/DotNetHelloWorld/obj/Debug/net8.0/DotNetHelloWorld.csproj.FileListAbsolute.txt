@@ -1,0 +1,15 @@
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/DotNetHelloWorld
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/DotNetHelloWorld.deps.json
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/DotNetHelloWorld.runtimeconfig.json
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/DotNetHelloWorld.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/DotNetHelloWorld.pdb
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.AssemblyInfoInputs.cache
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.AssemblyInfo.cs
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.csproj.CoreCompileInputs.cache
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.sourcelink.json
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/refint/DotNetHelloWorld.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.pdb
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHelloWorld.genruntimeconfig.cache
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/ref/DotNetHelloWorld.dll

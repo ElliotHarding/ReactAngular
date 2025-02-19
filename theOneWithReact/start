@@ -37,7 +37,23 @@ export default App;
 
 # 5. npm start
 
-# 6. 
-     npm run build
+# 6. npm run build
      
 # 7. npm start
+
+
+
+
+
+---------------------------------
+
+---------------------------------
+
+dotnet
+
+# 1. dotnet new console -o DotNetHelloWorld
+
+# 2. cd HelloWorld
+
+# 3. dotnet run
+

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HvyZ3zR4TH4rT3K8nA/XAWLjYVHVhfy6g3WMJUrwrim9r46qqqmbHyKaz98Os5tCnoHBu4gIkaKfe4Oj+JMrmQ==",
+  "success": true,
+  "projectFilePath": "/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/DotNetHelloWorld.csproj",
+  "expectedPackageFiles": [
+    "/home/hello/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.10/microsoft.aspnetcore.app.ref.8.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
