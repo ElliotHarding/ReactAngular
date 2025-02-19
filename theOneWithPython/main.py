@@ -8,4 +8,4 @@ while True:
 	calculator(input("Enter equation: "))
 	
 		
-	
+
