@@ -9,12 +9,12 @@ function App() {
   const [message, setMessage] = useState('');
  
   var allProducts = ["Alpha", "Bravo", "Omega"];
-  var [products, setProducts] = useState([]);//"Alpha", "Bravo", "Omega"
+  var [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
   useEffect(() => {
-    fetch('http://localhost:3000/Products') // Replace with your API port
+    fetch('http://localhost:5000/api/Products') // Replace with your API port
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

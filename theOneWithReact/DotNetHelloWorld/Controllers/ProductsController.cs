@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace MyApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")] // Or [Route("api/[controller]")]
+    [Route("api/[controller]")] // Or [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
         private static readonly List<Product> _products = new List<Product>
