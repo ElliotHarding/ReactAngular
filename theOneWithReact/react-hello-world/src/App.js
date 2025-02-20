@@ -8,7 +8,8 @@ function App() {
   const items = ["Apple", "Banana", "Orange"];
   const [message, setMessage] = useState('');
  
-  const [apiMessage, setApiMessage] = useState('');
+  var allProducts = ["Alpha", "Bravo", "Omega"];
+  var [products, setProducts] = useState([]);//"Alpha", "Bravo", "Omega"
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
@@ -21,13 +22,13 @@ function App() {
         return response.text();
       })
       .then((data) => {
-        setApiMessage(data);
+      	//console.log(data);
+        setProducts(data);
         setLoading(false);
       })
       .catch((err) => {
         setError(err);
         setLoading(false);
-        setApiMessage("No Message");
       });
   }, []);    
   
@@ -41,8 +42,28 @@ function App() {
     <div className="App">
       <h1>{theHelloWorld}</h1>  
        
-      <h1>API MESSAGE: {apiMessage}</h1>    
+      <h1>All Product Items</h1>
+      <ul>
+        {allProducts.map((product, index) => (
+          <li key={index}>{product}</li>
+        ))}
+      </ul>   
+      
+      
+      <h1>Products</h1>
+      {Array.isArray(products)} =>
+      (
+       {products}
+      )
+      <ul>
+        {products && Array.isArray(products) && products.map((product) => (
+        <li key={product}>
+          product
+        </li>
+      ))}
+      </ul> 
      
+      <h1>Items</h1>
       <ul>
 		  {items.map((item, index) => (
 		    <li key={index}>{item}</li>
