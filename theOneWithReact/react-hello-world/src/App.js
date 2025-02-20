@@ -7,21 +7,13 @@ function App() {
 
   const items = ["Apple", "Banana", "Orange"];
   const [message, setMessage] = useState('');
-  
-  /*
-  useEffect(() => {
-    fetch('https://localhost:3000/Products') // Replace <port> with your API port
-      .then(response => response.text())
-      .then(data => setMessage(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);*/
-  
+ 
   const [apiMessage, setApiMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
-    fetch('https://localhost:3000/Products') // Replace with your API port
+    fetch('http://localhost:3000/Products') // Replace with your API port
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -35,19 +27,22 @@ function App() {
       .catch((err) => {
         setError(err);
         setLoading(false);
+        setApiMessage("No Message");
       });
-  }, []);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
-
+  }, []);    
+  
+  if(error)
+  {
+  	return <h1>{error.message}</h1>;
+  }
+  
+  var theHelloWorld = "hello-world!"
   return (
     <div className="App">
-      <h1>Hello, World!</h1>
-      <p>{apiMessage}</p>
-      <p>{apiMessage}</p>
-      <p>{apiMessage}</p>
-      <p>{apiMessage}</p>
+      <h1>{theHelloWorld}</h1>  
+       
+      <h1>API MESSAGE: {apiMessage}</h1>    
+     
       <ul>
 		  {items.map((item, index) => (
 		    <li key={index}>{item}</li>
