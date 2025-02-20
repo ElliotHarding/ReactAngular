@@ -36,6 +36,8 @@ function App() {
   	return <h1>{error.message}</h1>;
   }
   
+  console.log('Products state:', products);
+  
   var theHelloWorld = "hello-world!"
   return (
     <div className="App">
@@ -50,17 +52,13 @@ function App() {
       
       
       <h1>Products</h1>
-      {Array.isArray(products)} =>
-      (
-       {products}
-      )
       <ul>
-        {products && Array.isArray(products) && products.map((product) => (
-        <li key={product}>
-          product
-        </li>
-      ))}
-      </ul> 
+        {products && products.map((product) => (
+          <li key={product.id}>
+            {product.name} - ${product.price}
+          </li>
+        ))}
+      </ul>
      
       <h1>Items</h1>
       <ul>
@@ -73,3 +71,28 @@ function App() {
 }
 
 export default App;
+
+
+
+/*
+{Array.isArray(products)} =>
+      (
+       {products}
+      )
+      <ul>
+        {products && Array.isArray(products) && products.map((product) => (
+        <li key={product.id}>
+          {product.name}
+        </li>
+      ))}
+      </ul> 
+      
+      <ul>
+        {products && Array.isArray(products) && products.map((product) => (
+          <li key={product.id}>
+            {product.name} - ${product.price}
+          </li>
+        ))}
+      </ul>
+
+*/
