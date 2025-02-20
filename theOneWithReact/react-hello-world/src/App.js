@@ -58,7 +58,23 @@ function App() {
 
     fetchData();
   }, []);
- 
+  
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/Products/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Update the product list after successful deletion
+      setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));
+    } catch (err) {
+      setError(err);
+    }
+  }; 
   
   if(error)
   {
@@ -85,6 +101,7 @@ function App() {
         {products && products.map((product) => (
           <li key={product.id}>
             {product.name} - ${product.price}
+            <button onClick={() => handleDelete(product.id)}>X</button>
           </li>
         ))}
       </ul>
