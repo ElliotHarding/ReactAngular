@@ -8,10 +8,14 @@ public class ProductsController : ControllerBase
     // Example: In-memory data (replace with database access)
     private static List<string> products = new List<string> { "Product 1", "Product 2" };
 
-    [HttpGet]
+    /*[HttpGet]
     public IEnumerable<string> Get()
     {
         return products;
+    }*/
+    public IActionResult Get()
+    {
+    	return Ok("Hello from .NET!");
     }
 
     // ... other API methods (POST, PUT, DELETE, etc.)
