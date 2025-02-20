@@ -22,7 +22,6 @@ function App() {
         return response.text();
       })
       .then((data) => {
-      	//console.log(data);
         setProducts(data);
         setLoading(false);
       })
