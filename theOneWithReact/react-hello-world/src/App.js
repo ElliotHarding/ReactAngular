@@ -13,7 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  useEffect(() => {
+  /*useEffect(() => {
     fetch('http://localhost:5000/api/Products') // Replace with your API port
       .then((response) => {
         if (!response.ok) {
@@ -29,7 +29,36 @@ function App() {
         setError(err);
         setLoading(false);
       });
-  }, []);    
+  }, []);   */
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const response = await fetch('http://localhost:5000/api/Products');
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("API data:", data); // added console log
+        setProducts(data);
+        console.log("Products state:", products); //added console log
+        console.log("Is array:", Array.isArray(products)); //added console log
+
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+ 
   
   if(error)
   {
