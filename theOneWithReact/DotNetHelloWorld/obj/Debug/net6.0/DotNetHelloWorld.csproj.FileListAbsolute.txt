@@ -1,0 +1,6 @@
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net6.0/DotNetHelloWorld.csproj.AssemblyReference.cache
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net6.0/DotNetHelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net6.0/DotNetHelloWorld.AssemblyInfoInputs.cache
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net6.0/DotNetHelloWorld.AssemblyInfo.cs
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net6.0/DotNetHelloWorld.csproj.CoreCompileInputs.cache
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net6.0/DotNetHelloWorld.sourcelink.json

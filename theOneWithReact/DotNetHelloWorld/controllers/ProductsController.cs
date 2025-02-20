@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic; // Example: For lists
 
 [ApiController]
-[Route("api/[controller]")] // Example route: /api/products
+[Route("[controller]")] // Example route: /api/products
 public class ProductsController : ControllerBase
 {
     // Example: In-memory data (replace with database access)
