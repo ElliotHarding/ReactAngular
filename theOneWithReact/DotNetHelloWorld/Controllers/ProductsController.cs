@@ -30,6 +30,15 @@ namespace MyApi.Controllers
             }
             return Ok(product);
         }
+        
+        public ActionResult<Product> initAdd()
+        {
+        	_products.Add(new Product { Id = 1, Name = "Laptop", Price = 1200 });
+            _products.Add(new Product { Id = 2, Name = "Mouse", Price = 25 });
+            _products.Add(new Product { Id = 3, Name = "Keyboard", Price = 50 });
+            
+            return NoContent();
+        }
 
         [HttpPost]
         public ActionResult<Product> Post(Product product)

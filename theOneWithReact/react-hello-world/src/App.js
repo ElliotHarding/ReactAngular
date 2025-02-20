@@ -12,25 +12,10 @@ function App() {
   var [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [newProductName, setNewProductName] = useState('');
+  const [newProductPrice, setNewProductPrice] = useState('');
   
-  /*useEffect(() => {
-    fetch('http://localhost:5000/api/Products') // Replace with your API port
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-  }, []);   */
-  
+  //Retrieve data
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -59,6 +44,7 @@ function App() {
     fetchData();
   }, []);
   
+  //Delete data
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`http://localhost:5000/api/Products/${id}`, {
@@ -74,7 +60,34 @@ function App() {
     } catch (err) {
       setError(err);
     }
-  }; 
+  };
+  
+  //Add product
+  const handleAddProduct = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/Products/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: newProductName,
+          price: parseFloat(newProductPrice),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const newProduct = await response.json();
+      setProducts((prevProducts) => [...prevProducts, newProduct]);
+      setNewProductName('');
+      setNewProductPrice(''); //clear form.
+    } catch (err) {
+      setError(err);
+    }
+  };
   
   if(error)
   {
@@ -97,6 +110,23 @@ function App() {
       
       
       <h1>Products</h1>
+      
+      <div>
+        <input
+          type="text"
+          placeholder="Product Name"
+          value={newProductName}
+          onChange={(e) => setNewProductName(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Product Price"
+          value={newProductPrice}
+          onChange={(e) => setNewProductPrice(e.target.value)}
+        />
+        <button onClick={handleAddProduct}>Add Product</button>
+      </div>
+      
       <ul>
         {products && products.map((product) => (
           <li key={product.id}>
