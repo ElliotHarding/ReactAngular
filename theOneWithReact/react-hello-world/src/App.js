@@ -5,7 +5,7 @@ import React from 'react';
 
 function App() {
 
-	const items = ["Apple", "Banana", "Orange"];
+  const items = ["Apple", "Banana", "Orange"];
 
   return (
     <div className="App">
