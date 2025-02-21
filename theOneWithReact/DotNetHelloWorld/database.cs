@@ -9,7 +9,7 @@ namespace MyApi
         {
         }
 
-        public DbSet<Product> Products { get; set; } // This line includes Product.cs
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

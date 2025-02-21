@@ -30,7 +30,34 @@ namespace MyApi.Controllers // Replace with your actual namespace
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
-        {
+        {     	       	
+        	if(_context.Products.FirstOrDefault(p => p.Name == "Laptop") == null) 
+        	{
+        		 _context.Products.AddRange(new Product { Name = "Laptop", Price = 1200 });
+        	}
+        	
+        	if(_context.Products.FirstOrDefault(p => p.Name == "Mouse") == null) 
+        	{
+        		 _context.Products.AddRange(new Product { Name = "Mouse", Price = 25 });
+        	}
+        	
+        	if(_context.Products.FirstOrDefault(p => p.Name == "Keyboard") == null) 
+        	{
+        		 _context.Products.AddRange(new Product { Name = "Keyboard", Price = 50 });
+        	}
+        	
+        	 _context.SaveChanges();      
+        
+        	/*if (_context.Products.CountAsync().Result < 3)
+            {
+                _context.Products.AddRange(
+                    new Product { Name = "Laptop", Price = 1200 },
+                    new Product { Name = "Mouse", Price = 25 },
+                    new Product { Name = "Keyboard", Price = 50 }
+                );
+                _context.SaveChanges();
+            }*/
+        
             return await _context.Products.ToListAsync();
         }
 
