@@ -7,7 +7,8 @@ namespace MyApi.Controllers
     [Route("api/[controller]")] // Or [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private static readonly List<Product> _products = new List<Product>
+    	// private static readonly
+        private List<Product> _products = new List<Product>
         {
             new Product { Id = 1, Name = "Laptop", Price = 1200 },
             new Product { Id = 2, Name = "Mouse", Price = 25 },
@@ -27,6 +28,13 @@ namespace MyApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get()
         {
+        	_products = new List<Product>
+		    {
+		        new Product { Id = 1, Name = "Laptop", Price = 1200 },
+		        new Product { Id = 2, Name = "Mouse", Price = 25 },
+		        new Product { Id = 3, Name = "Keyboard", Price = 50 }
+		    };
+        
             return Ok(_products);
         }
 

@@ -14,36 +14,7 @@ function App() {
   const [newProductName, setNewProductName] = useState('');
   const [newProductPrice, setNewProductPrice] = useState('');
   
-  
-  /*  
-   const getProducts = async () => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      const response = await fetch('https://localhost:5000/api/Products'); // Assuming your route is api/Products
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setProducts(data);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-  
-   const handleRefresh = () => {
-    getProducts();
-  	};*/
-  
-  //Retrieve data
-  useEffect(() => {
-    
-    const fetchData = async () => {
+  const fetchData = async () => {
       setLoading(true);
       setError(null);
       
@@ -69,7 +40,12 @@ function App() {
       }
     };
     
-  }, []);
+    //Retrieve data
+	  useEffect(() => {
+		
+		fetchData();
+		
+	  }, []);
   
   //Delete data
   const handleDelete = async (id) => {
@@ -88,7 +64,6 @@ function App() {
       
       // Update the product list after successful deletion
       setProducts((prevProducts) => prevProducts.filter((product) => product.id !== id));  
-      
     } catch (err) {
       setError(err);
     }
@@ -171,11 +146,14 @@ function App() {
   
   //<button onClick={handleRefresh}>Refresh Data</button>
   
-  var theHelloWorld = "hello-world!"
+  var theHelloWorld = "Hello World!"
   return (
     <div className="App">
       <h1>{theHelloWorld}</h1>  
-      <h1>Products</h1>
+      
+      
+      <h2>Products (Dotnet)</h2>
+      <button onClick={() => fetchData()}>Fetch Data!</button>
       <div>
         <input
           type="text"
@@ -201,16 +179,14 @@ function App() {
         ))}
       </ul>
      
-      <h1>Items</h1>
+      <h2>Items (React)</h2>
       <ul>
 		  {items.map((item, index) => (
 		    <li key={index}>{item}</li>
 		  ))}
     	</ul>
     	
-      <h1></h1>
-      <h1></h1>
-      <h1>Python sending data</h1>
+      <h2>Maths equations (Python)</h2>
     	
       {apiData && <p>{apiData.message}</p>}
 	  <div>
