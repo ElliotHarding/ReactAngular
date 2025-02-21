@@ -13,6 +13,16 @@ namespace MyApi.Controllers
             new Product { Id = 2, Name = "Mouse", Price = 25 },
             new Product { Id = 3, Name = "Keyboard", Price = 50 }
         };
+        
+       /* public ActionResult<Product> initAdd()
+        {
+        	_products.clear();
+        	_products.Add(new Product { Id = 1, Name = "Laptop", Price = 1200 });
+            _products.Add(new Product { Id = 2, Name = "Mouse", Price = 25 });
+            _products.Add(new Product { Id = 3, Name = "Keyboard", Price = 50 });
+            
+            return Ok(_products);
+        }*/
 
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get()
@@ -31,14 +41,12 @@ namespace MyApi.Controllers
             return Ok(product);
         }
         
-        public ActionResult<Product> initAdd()
+        /*[HttpGet]
+        public ActionResult GetProducts()
         {
-        	_products.Add(new Product { Id = 1, Name = "Laptop", Price = 1200 });
-            _products.Add(new Product { Id = 2, Name = "Mouse", Price = 25 });
-            _products.Add(new Product { Id = 3, Name = "Keyboard", Price = 50 });
-            
-            return NoContent();
-        }
+            initAdd();
+            return Ok(_products);
+        }*/
 
         [HttpPost]
         public ActionResult<Product> Post(Product product)
