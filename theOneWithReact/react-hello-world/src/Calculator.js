@@ -1,12 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-
 import React, { useState, useEffect } from 'react';
 
-function App() {
+import './Calculator.css';
 
-  const items = ["Apple", "Banana", "Orange"];
-  const [message, setMessage] = useState('');
+function Calculator() {
   
   //Python vars
   const [apiData, setApiData] = useState(null);
@@ -45,18 +41,8 @@ function App() {
     }
   };
   
-  var theHelloWorld = "Hello World!"
   return (
-    <div className="App">
-      <h1>{theHelloWorld}</h1>  
-           
-      <h2>Items (React)</h2>
-      <ul>
-		  {items.map((item, index) => (
-		    <li key={index}>{item}</li>
-		  ))}
-    	</ul>
-    	
+    <div className="Calculator">   	
       <h2>Maths equations (Python)</h2>
     	
       {apiData && <p>{apiData.message}</p>}
@@ -74,4 +60,4 @@ function App() {
   );
 }
 
-export default App;
+export default Calculator;
