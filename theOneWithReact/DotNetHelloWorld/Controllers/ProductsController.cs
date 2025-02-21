@@ -46,17 +46,7 @@ namespace MyApi.Controllers // Replace with your actual namespace
         		 _context.Products.AddRange(new Product { Name = "Keyboard", Price = 50 });
         	}
         	
-        	 _context.SaveChanges();      
-        
-        	/*if (_context.Products.CountAsync().Result < 3)
-            {
-                _context.Products.AddRange(
-                    new Product { Name = "Laptop", Price = 1200 },
-                    new Product { Name = "Mouse", Price = 25 },
-                    new Product { Name = "Keyboard", Price = 50 }
-                );
-                _context.SaveChanges();
-            }*/
+        	 _context.SaveChanges();
         
             return await _context.Products.ToListAsync();
         }

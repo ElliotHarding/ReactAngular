@@ -36,6 +36,48 @@ function ProductList() {
       }
     };
     
+    
+    //Send to python for graph analysis
+    //
+    const [histogramImage, setHistogramImage] = useState(null);
+	const [data, setData] = useState({
+		A: 10,
+		B: 15,
+		C: 20,
+		D: 10,
+		E: 25,
+	  });
+    //const [processedResult, setProcessedResult] = useState(null);
+   	//products
+    //Send to python
+	const handleProcessData = async () => {
+		try {
+		
+		  const response = await fetch('http://localhost:8000/api/createProductDataHistogram', {
+			method: 'POST',
+			headers: {
+			  'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ input: products }),
+		  });
+		  
+		   if (response.ok) {
+                const imageBlob = await response.blob();
+                const imageUrl = URL.createObjectURL(imageBlob);
+                setHistogramImage(imageUrl);
+            } else {
+                console.error('Error fetching histogram:', response.status);
+            }
+		  
+		  //const data = await response.json();
+		  //setProcessedResult(data);
+		} catch (error) {
+		  console.error('Error processing data:', error);
+		}
+   };
+    
+    
+    
     //Delete data
   	const handleDelete = async (id) => {
     try {
@@ -97,8 +139,7 @@ function ProductList() {
   return (
   	<div className="ProductList">
   	
-	  	<h2>Products (Dotnet) <
-	  	button onClick={() => fetchData()}>Fetch Data!</button>
+	  	<h2>Products (Dotnet) <button onClick={() => fetchData()}>Fetch Data!</button>
 	  	</h2>
 	  	
 	  	<div>
@@ -125,7 +166,9 @@ function ProductList() {
 		        <button onClick={() => handleDelete(product.id)}>X</button>
 		      </li>
 		    ))}
-      </ul>
+      	</ul>     	
+        <button onClick={() => handleProcessData()}>Display data!</button>
+        {histogramImage && <img src={histogramImage} alt="Histogram" />}
   	</div>
   );
 }
