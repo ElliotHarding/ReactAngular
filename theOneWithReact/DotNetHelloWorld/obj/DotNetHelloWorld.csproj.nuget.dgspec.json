@@ -51,6 +51,14 @@
               "target": "Package",
               "version": "[2.3.0, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
             "Microsoft.OpenApi": {
               "target": "Package",
               "version": "[1.6.23, )"

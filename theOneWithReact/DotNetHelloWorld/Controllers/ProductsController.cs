@@ -1,136 +1,103 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace MyApi.Controllers
+namespace MyApi.Controllers // Replace with your actual namespace
 {
     [ApiController]
-    [Route("api/[controller]")] // Or [Route("api/[controller]")]
+    [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-    	// private static readonly
-        private List<Product> _products = new List<Product>
+        private readonly ApplicationDbContext _context;
+
+        public ProductsController(ApplicationDbContext context)
         {
-            new Product { Id = 1, Name = "Laptop", Price = 1200 },
-            new Product { Id = 2, Name = "Mouse", Price = 25 },
-            new Product { Id = 3, Name = "Keyboard", Price = 50 }
-        };
-        
-       /* public ActionResult<Product> initAdd()
-        {
-        	_products.clear();
-        	_products.Add(new Product { Id = 1, Name = "Laptop", Price = 1200 });
-            _products.Add(new Product { Id = 2, Name = "Mouse", Price = 25 });
-            _products.Add(new Product { Id = 3, Name = "Keyboard", Price = 50 });
-            
-            return Ok(_products);
-        }*/
+            _context = context;
+
+            // Seed initial data (for in-memory database)
+            if (_context.Products.CountAsync().Result == 0)
+            {
+                _context.Products.AddRange(
+                    new Product { Name = "Laptop", Price = 1200 },
+                    new Product { Name = "Mouse", Price = 25 },
+                    new Product { Name = "Keyboard", Price = 50 }
+                );
+                _context.SaveChanges();
+            }
+        }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Product>> Get()
+        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
-        	_products = new List<Product>
-		    {
-		        new Product { Id = 1, Name = "Laptop", Price = 1200 },
-		        new Product { Id = 2, Name = "Mouse", Price = 25 },
-		        new Product { Id = 3, Name = "Keyboard", Price = 50 }
-		    };
-        
-            return Ok(_products);
+            return await _context.Products.ToListAsync();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Product> Get(int id)
+        public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var product = _products.Find(p => p.Id == id);
+            var product = await _context.Products.FindAsync(id);
+
             if (product == null)
             {
                 return NotFound();
             }
-            return Ok(product);
+
+            return product;
         }
-        
-        /*[HttpGet]
-        public ActionResult GetProducts()
-        {
-            initAdd();
-            return Ok(_products);
-        }*/
 
         [HttpPost]
-        public ActionResult<Product> Post(Product product)
+        public async Task<ActionResult<Product>> PostProduct(Product product)
         {
-            if (product == null)
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProduct(int id, Product product)
+        {
+            if (id != product.Id)
             {
                 return BadRequest();
             }
 
-            // In a real application, you'd likely generate a new ID and save to a database.
-            product.Id = _products.Count + 1;
-            _products.Add(product);
+            _context.Entry(product).State = EntityState.Modified;
 
-            return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
-        }
-
-        [HttpPut("{id}")]
-        public ActionResult<Product> Put(int id, Product updatedProduct)
-        {
-            var existingProduct = _products.Find(p => p.Id == id);
-            if (existingProduct == null)
+            try
             {
-                return NotFound();
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Products.Any(e => e.Id == id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
 
-            existingProduct.Name = updatedProduct.Name;
-            existingProduct.Price = updatedProduct.Price;
-
-            return Ok(existingProduct);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> DeleteProduct(int id)
         {
-            var product = _products.Find(p => p.Id == id);
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            _products.Remove(product);
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
 
-            return NoContent(); // 204 No Content
+            return NoContent();
         }
     }
-
-    public class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-    }
 }
-
-
-/*using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic; // Example: For lists
-
-[ApiController]
-[Route("/Products")] // Example route: /api/products
-public class ProductsController : ControllerBase
-{
-    // Example: In-memory data (replace with database access)
-    private static List<string> products = new List<string> { "Product 1", "Product 2" };
-    /*
-    [HttpGet]
-    public IEnumerable<string> Get()
-    {
-        return products;
-    }* /
-
-    [HttpGet]
-    public IActionResult Get()
-    {
-    	return Ok("Hello from .NET!");
-    }
-
-    // ... other API methods (POST, PUT, DELETE, etc.)
-}*/

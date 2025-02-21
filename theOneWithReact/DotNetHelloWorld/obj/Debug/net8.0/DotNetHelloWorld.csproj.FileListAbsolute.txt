@@ -39,3 +39,11 @@
 /home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/staticwebassets.pack.json
 /home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/scopedcss/bundle/DotNetHelloWorld.styles.css
 /home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/obj/Debug/net8.0/DotNetHe.FEAE5EDE.Up2Date
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.Extensions.Caching.Memory.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
