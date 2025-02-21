@@ -88,6 +88,11 @@ function ProductList() {
       setError(err);
     }
   };
+  
+  if(error)
+  {
+  	return <h1>{error.message}</h1>;
+  }
 
   return (
   	<div className="ProductList">
