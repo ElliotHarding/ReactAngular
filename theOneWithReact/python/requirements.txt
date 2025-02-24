@@ -1,0 +1,6 @@
+Flask
+requests
+matplotlib
+flask-cors
+
+#//pacman -S python-Flask ect..

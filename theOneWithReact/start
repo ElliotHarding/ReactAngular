@@ -1,33 +1,65 @@
 
+docker-compose up --build
+
+
+--------------------------------------------
+
+		RUN INSTRUCTIONS
+
+-------------------------------------------
+
  Contains various applications:
  
   (check install) (below for all)
   
 1.   DotNetHelloWorld 			
    		cd dotnet	
-   		dotnet build	
-   		dotnet run
    		or
    		dotnet run --urls "http://localhost:5000"
    		(port 5000)(port 5001)
+   		[
+   		dotnet build	
+   		dotnet run
+   		]
    		
    		http://localhost:5000/api/Products	
    		
-2.	python						 		
+2.	python	
+		(port 8000)
+		[					 		
 		 python3 main.py
-		 (port 8000)  
-		 
+		 ]
 		 http://localhost:8000/api/data
 		 http://localhost:8000/api/process_data 
 		 http://localhost:8000/api/createProductDataHistogram
 
 
 3.  react 	
+		cd react-hello-world
+		sudo pacman -S nodejs npm
+		sudo npm install -g expo-cli
+		sudo npm install expo
+		sudo npx expo start
+		[
 		npm run build
 		npm start
+		]
 
 4.	vue.js
 		just open the index.html
+		
+
+-------------------------------------------
+
+		INSTALL INSTRUCTIONS
+		
+
+---------------------------------------------
+
+
+
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 -------------------------------------------
 

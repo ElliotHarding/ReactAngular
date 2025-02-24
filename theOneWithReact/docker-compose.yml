@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  react:
+    build:
+      context: .
+      dockerfile: react-hello-world/Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - dotnet
+      - python
+  dotnet:
+    build:
+      context: .
+      dockerfile: DotNetHelloWorld/Dockerfile
+    ports:
+      - "5000:80"
+  python:
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+    ports:
+      - "8000:8000"
