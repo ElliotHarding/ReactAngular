@@ -1,8 +1,6 @@
 # Use the .NET SDK base image
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-#7.0.20
-
 # Set the working directory
 WORKDIR /app
 

@@ -5,6 +5,14 @@ docker-compose up --build
 --------------------------------------------
 
 		RUN INSTRUCTIONS
+		
+		
+docker ps:
+
+CONTAINER ID   IMAGE                    COMMAND                  CREATED              STATUS              PORTS                                       NAMES
+bfd00999162c   theonewithreact-react    "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:3000->80/tcp, [::]:3000->80/tcp     theonewithreact-react-1
+1ac5529436f3   theonewithreact-dotnet   "dotnet DotNetHelloW…"   8 minutes ago        Up About a minute   0.0.0.0:5000->80/tcp, [::]:5000->80/tcp     theonewithreact-dotnet-1
+9e6d73ee2ab2   theonewithreact-python   "python3 main.py"        About an hour ago    Up About a minute   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp   theonewithreact-python-1
 
 -------------------------------------------
 
