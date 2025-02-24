@@ -1,5 +1,5 @@
 # Use the .NET SDK base image
-FROM mcr.microsoft.com/dotnet/sdk:8.0.406 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0.0 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -26,4 +26,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 COPY --from=build /app/out ./
 EXPOSE 80
-ENTRYPOINT ["dotnet", "MyApi.dll"] #Change MyApi.dll to your dll name.
+#ENTRYPOINT ["dotnet", "DotNetHelloWorld.dll"] #Change MyApi.dll to your dll name.
+CMD ["dotnet", "DotNetHelloWorld.dll"]
