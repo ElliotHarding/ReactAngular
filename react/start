@@ -1,4 +1,0 @@
-sudo pacman -S nodejs npm
-sudo npm install -g expo-cli
-
-sudo npx expo start
