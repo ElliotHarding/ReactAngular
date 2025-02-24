@@ -47,3 +47,4 @@
 /home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
 /home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
 /home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/home/hello/Documents/Git/ReactAngular/theOneWithReact/DotNetHelloWorld/bin/Debug/net8.0/launchSettings _ but renamed.json

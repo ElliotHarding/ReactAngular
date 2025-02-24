@@ -1,3 +1,36 @@
+
+ Contains various applications:
+ 
+  (check install) (below for all)
+  
+1.   DotNetHelloWorld 			
+   		cd dotnet	
+   		dotnet build	
+   		dotnet run
+   		or
+   		dotnet run --urls "http://localhost:5000"
+   		(port 5000)(port 5001)
+   		
+   		http://localhost:5000/api/Products	
+   		
+2.	python						 		
+		 python3 main.py
+		 (port 8000)  
+		 
+		 http://localhost:8000/api/data
+		 http://localhost:8000/api/process_data 
+		 http://localhost:8000/api/createProductDataHistogram
+
+
+3.  react 	
+		npm run build
+		npm start
+
+4.	vue.js
+		just open the index.html
+
+-------------------------------------------
+
 sudo pacman -S nodejs npm
 sudo npm install -g expo-cli
 sudo npm install expo
