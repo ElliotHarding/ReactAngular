@@ -51,23 +51,51 @@ def create_histogram_from_dict(data_dict, title="Histogram"):
     #print("list(data_dict).values()")
     #print(list(data_dict).values())
     
-    outer_list = list(data_dict.values())
+    
+    
+    
+    
+    #outer_list = list(data_dict.values())
 
-    if not outer_list or not outer_list[0]:
-        print("Dictionary has no values to plot or inner list is empty.")
-        return None
+   # if not outer_list or not outer_list[0]:
+    #    print("Dictionary has no values to plot or inner list is empty.")
+    #    return None
 
-    inner_list = outer_list[0]  # Get the inner list of dictionaries
-    prices = [item['price'] for item in inner_list]  # Extract prices
+    #inner_list = outer_list[0]  # Get the inner list of dictionaries
+    #prices = [item['price'] for item in inner_list]  # Extract prices
 
-    if not prices:
-        print("No prices found in the list of dictionaries.")
-        return None
+    #if not prices:
+    #    print("No prices found in the list of dictionaries.")
+    #    return None
 
-    print("Prices:", prices) #Debug line.
+    #print("Prices:", prices) #Debug line.
 
-    plt.figure(figsize=(10, 6))
-    plt.hist(prices, bins='auto', edgecolor='black')
+    #plt.figure(figsize=(10, 6))
+    #plt.hist(prices, bins='auto', edgecolor='black')
+    
+    
+    
+    
+    #x_values = list(data_dict.keys())
+    #y_values = list(data_dict.values())
+    
+    #print("Length of x_values:", len(x_values))
+    #print("Length of y_values:", len(y_values))
+	
+    #print("x_values:", x_values)
+    #print("y_values:", y_values)
+
+    #if not x_values or not y_values:
+    #    print("Dictionary has no data points to plot.")
+    #    return None
+
+    #plt.figure(figsize=(10, 6))
+    #plt.scatter(x_values, y_values)
+    
+    
+    l
+    
+    
     plt.title(title)
     plt.xlabel("Values")
     plt.ylabel("Frequency")
