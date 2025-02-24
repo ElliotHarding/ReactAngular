@@ -1,5 +1,7 @@
 # Use the .NET SDK base image
-FROM mcr.microsoft.com/dotnet/sdk:8.0.406 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+#7.0.20
 
 # Set the working directory
 WORKDIR /app
@@ -22,7 +24,7 @@ RUN dotnet publish -c Release -o out
 #RUN dotnet run
 
 # Use the ASP.NET Core runtime base image
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/out ./
 EXPOSE 80
