@@ -17,4 +17,4 @@ COPY python/ .
 EXPOSE 8000
 
 # Run the Flask app
-CMD ["python", "app.py"] #change app.py to your python file name.
+CMD ["python3", "main.py"]

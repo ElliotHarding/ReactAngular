@@ -18,10 +18,8 @@ COPY DotNetHelloWorld/ .
 # Build the application
 RUN dotnet publish -c Release -o out
 
-
 #RUN dotnet build
 #RUN dotnet run
-
 
 # Use the ASP.NET Core runtime base image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
