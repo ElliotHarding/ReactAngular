@@ -12,6 +12,12 @@ RUN dotnet restore
 
 # Copy the application
 COPY DotNetHelloWorld/ .
+COPY DotNetHelloWorld/Controllers/ ./Controllers
+
+#COPY DotNetHelloWorld/Controllers/*.cs ./Controllers/
+#COPY DotNetHelloWorld/Controllers/*.cs /app/Controllers/
+#COPY DotNetHelloWorld/Controllers/*.cs ./app/Controllers/
+#COPY DotNetHelloWorld/Controllers/*.cs ./
 
 ##RUN dotnet build DotNetHelloWorld/MyApi.csproj -c Release
 
@@ -23,6 +29,7 @@ RUN dotnet publish -c Release -o out
 
 # Install curl
 RUN apt-get update && apt-get install -y curl
+#apt-get update && apt-get install -y curl
 
 # Use the ASP.NET Core runtime base image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
@@ -30,6 +37,7 @@ WORKDIR /app
 COPY --from=build /app/out ./
 EXPOSE 80
 EXPOSE 5000
+EXPOSE 3000
 #ENTRYPOINT ["dotnet", "DotNetHelloWorld.dll"] #Change MyApi.dll to your dll name.
 CMD ["apt-get", "update", "&&", "apt-get", "install", "-y", "curl"]
 CMD ["dotnet", "DotNetHelloWorld.dll", "--urls=http://localhost:5000/"]
