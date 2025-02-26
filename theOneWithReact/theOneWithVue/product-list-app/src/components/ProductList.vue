@@ -1,0 +1,57 @@
+<template>
+  <div>
+    <h2>Product List</h2>
+    <div class="product-list">
+      <ProductCard
+        v-for="product in products"
+        :key="product.id"
+        :product="product"
+        @add-to-cart="handleAddToCart"
+      />
+    </div>
+    <div v-if="cart.length > 0">
+      <h2>Cart</h2>
+      <ul>
+        <li v-for="item in cart" :key="item.id">
+          {{ item.name }} - ${{ item.price }} 
+          <button @click="remove(index)">X</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script>
+import ProductCard from './ProductCard.vue';
+
+export default {
+  components: {
+    ProductCard,
+  },
+  data() {
+    return {
+      products: [
+        { id: 1, name: 'Laptop', price: 999, imageUrl: 'https://via.placeholder.com/150' },
+        { id: 2, name: 'Smartphone', price: 699, imageUrl: 'https://via.placeholder.com/150' },
+        { id: 3, name: 'Tablet', price: 399, imageUrl: 'https://via.placeholder.com/150' },
+      ],
+      cart: [],
+    };
+  },
+  methods: {
+    handleAddToCart(product) {
+      this.cart.push(product);
+    },
+    remove(productIndex) {
+      this.cart.splice(productIndex, 1)
+    }
+  },
+};
+</script>
+
+<style scoped>
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
