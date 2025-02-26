@@ -1,0 +1,8 @@
+npm install -g @vue/cli
+vue create product-list-app
+cd product-list-app
+
+src/components/ProductCard.vue
+src/App.vue
+
+npm run serve
