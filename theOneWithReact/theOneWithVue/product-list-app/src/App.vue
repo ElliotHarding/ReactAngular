@@ -1,26 +1,26 @@
 <template>
-  <div id="app">
-    <ProductList />
-  </div>
+    <div id="app">
+        <ProductList />
+    </div>
 </template>
 
 <script>
 import ProductList from './components/ProductList.vue';
 
 export default {
-  components: {
-    ProductList,
-  },
+    components: {
+        ProductList,
+    },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
 }
 </style>
