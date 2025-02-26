@@ -1,5 +1,10 @@
 <template>
   <div>
+    <h2>Search</h2>
+    <input type="text" v-model="searchQuery" placeholder="Enter search term" />
+    <br>
+    <br>
+    <br>
     <h2>Product List</h2>
     <div class="product-list">
       <ProductCard
@@ -10,7 +15,7 @@
       />
     </div>
     <div v-if="cart.length > 0">
-      <h2>Cart</h2>
+      <h2>Cart {{cart.length}}</h2>
       <ul>
         <li v-for="item in cart" :key="item.id">
           {{ item.name }} - ${{ item.price }} 
@@ -36,6 +41,10 @@ export default {
         { id: 3, name: 'Tablet', price: 399, imageUrl: 'https://via.placeholder.com/150' },
       ],
       cart: [],
+      searchQuery: '',	                //Search
+      searchResults: ["apple", "pear"], //Search
+      loading: false, 	                //Search
+      error: null,		                //Search
     };
   },
   methods: {
@@ -46,6 +55,16 @@ export default {
       this.cart.splice(productIndex, 1)
     }
   },
+  watch: {
+    searchQuery(newQuery, oldQuery) {
+        //this.cart.filter(result => result.toLowerCase().includes(newQuery.toLowerCase()));
+        //console.log(oldQuery);
+        
+        
+        
+        
+    }
+  }
 };
 </script>
 
